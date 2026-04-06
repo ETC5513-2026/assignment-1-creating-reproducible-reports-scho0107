@@ -32,6 +32,7 @@ Online merchants often spend money on targeted marketing to encourage customers 
 The purpose of this study is to examine whether higher marketing spend per customer is associated with higher purchase amounts. The analysis focuses on identifying patterns between these two variables across the dataset. In particular, it aims to determine whether increased marketing expenditure is linked to stronger customer spending behaviour.
 
 ## Dataset Introduction
+The dataset contains customer-level data from a customised marketing campaign. Each row represents an individual customer and includes variables such as marketing spend, number of visits, purchase amount, and customer segment. These variables allow us to explore how customer behaviour may vary with different levels of marketing exposure. Some variables contain missing values and will need to be cleaned before the analysis. This dataset will be used to investigate the relationship between marketing spend and purchase amount.
 
 ```{r}
 dat_clean <- dat |>
