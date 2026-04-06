@@ -29,6 +29,7 @@ dat <-read_csv(here("data/33234027_SumChong.csv"))
 Online merchants often spend money on targeted marketing to encourage customers to make purchases, but it is not always clear how effective this spending is in increasing revenue. Understanding this relationship can help businesses allocate their marketing budgets more efficiently. This analysis uses data from a recent campaign involving 150 customers, where each customer received a different level of marketing spend. The aim is to examine whether higher marketing expenditure per customer is associated with higher purchase amounts.
 
 ## Research Question
+The purpose of this study is to examine whether higher marketing spend per customer is associated with higher purchase amounts. The analysis focuses on identifying patterns between these two variables across the dataset. In particular, it aims to determine whether increased marketing expenditure is linked to stronger customer spending behaviour.
 
 ## Dataset Introduction
 
