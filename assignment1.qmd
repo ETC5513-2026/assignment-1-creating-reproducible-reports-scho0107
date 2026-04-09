@@ -26,19 +26,71 @@ dat <-read_csv(here("data/33234027_SumChong.csv"))
 ```
 
 ## Introduction
-Online merchants often spend money on targeted marketing to encourage customers to make purchases, but it is not always clear how effective this spending is in increasing revenue. Understanding this relationship can help businesses allocate their marketing budgets more efficiently. This analysis uses data from a recent campaign involving 150 customers, where each customer received a different level of marketing spend. The aim is to examine whether higher marketing expenditure per customer is associated with higher purchase amounts.
+Online merchants often invested in targeted marketing to encourage customers to make purchases, but it is not always clear how effective this spending is in increasing revenue. Understanding this relationship can help businesses allocate their marketing budgets more efficiently. This analysis uses data from a recent campaign involving 150 customers, where each customer received a different level of marketing spend. The aim is to examine whether higher marketing expenditure per customer is associated with higher purchase amounts.
 
 ## Research Question
-The purpose of this study is to examine whether higher marketing spend per customer is associated with higher purchase amounts. The analysis focuses on identifying patterns between these two variables across the dataset. In particular, it aims to determine whether increased marketing expenditure is linked to stronger customer spending behaviour.
+This study examines whether higher marketing spend per customer is associated with higher purchase amounts. The analysis focuses on identifying patterns between these two variables across the dataset. In particular, it aims to determine whether increased marketing expenditure is linked to stronger customer spending behaviour.
 
 ## Dataset Introduction
-The dataset contains customer-level data from a customised marketing campaign. Each row represents an individual customer and includes variables such as marketing spend, number of visits, purchase amount, and customer segment. These variables allow us to explore how customer behaviour may vary with different levels of marketing exposure. Some variables contain missing values and will need to be cleaned before the analysis. This dataset will be used to investigate the relationship between marketing spend and purchase amount.
+The dataset contains customer-level data from a customised marketing campaign. Each row represents an individual customer and includes variables such as marketing spend, number of visits, purchase amount, and customer segment. These variables allow us to examine how customer behaviour may vary with different levels of marketing exposure. Some variables contain missing values and will need to be cleaned before the analysis. This dataset is used to investigate the relationship between marketing spend and purchase amount.
 
 ```{r}
 dat_clean <- dat |>
     filter(!is.na(purchase_amount))
 ```
 
+### Data Cleaning
+The dataset was cleaned by eliminating observations with missing values in the purchase amount variable. This guarantees that every data point under analysis has accurate purchase information. Missing values were eliminated from the study since they may compromise the accuracy of the findings.
+
 ## Dataset Description
-The clean dataset contains `r nrow(dat_clean)` observations and `r ncol(dat_clean)` varaibles.
+The clean dataset contains `r nrow(dat_clean)` observations and `r ncol(dat_clean)` varaibles.It includes both numeric and categorical variables. Numeric variables such as `marketing_spend`, `visits`, and `purchase_amount` capture customer actitvity and spending behaviour, while the categorical variable `segment` groups customers into different categories.
+
+### Summary Table
+```{r}
+#| label: tbl-summary
+#| tbl-cap: "Number of customers in each segment"
+
+dat_clean |>
+    group_by(segment) |>
+    summarise(
+        avg_purchase = mean(purchase_amount, na.rm = TRUE),
+        count = n()
+    ) |>
+    knitr::kable()
+```
+
+As shown in Table @tbl-summary, the number of customers varies by segment. This provides helpful context for analysing variations in customer groups' purchasing habits.
+
+### Summary Plot
+```{r}
+#| label: fig-hist
+#| fig-cap: "Distribution of purchase amounts"
+
+ggplot(dat_clean, aes(x = purchase_amount)) +
+  geom_histogram(bins = 15)+
+  labs (x = "Purchase Amount", y = "Count")
+```
+
+Figure @fig-hist shows the distribution of purchase amounts across customers. The value are spend across a wide range, indicating variation in customer spending behaviour.
+
+```{r}
+#| label: fig-scatter
+#| fig-cap: "Relationship between marketing spend and purchase amount"
+
+ggplot(dat_clean,
+       aes(x = marketing_spend,
+           y = purchase_amount)) +
+  geom_point()
+```
+
+
+```{r}
+#| label: fig-box
+#| fig-cap: "Purchase amount across customer segments"
+ggplot(dat_clean,
+       aes(x = segment,
+           y = purchase_amount,
+           fill = segment)) +
+  geom_boxplot()
+```
 
