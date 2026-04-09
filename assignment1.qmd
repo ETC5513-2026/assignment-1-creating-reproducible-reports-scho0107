@@ -1,5 +1,5 @@
 ---
-title: "Assignment 1 Report"
+title: "Analysis of Marketing Spend and Customer Purchases"
 author: "Sum Yee Chong"
 format: 
     html:
@@ -43,7 +43,7 @@ dat_clean <- dat |>
 The dataset was cleaned by eliminating observations with missing values in the purchase amount variable. This guarantees that every data point under analysis has accurate purchase information. Missing values were eliminated from the study since they may compromise the accuracy of the findings.
 
 ## Dataset Description
-The clean dataset contains `r nrow(dat_clean)` observations and `r ncol(dat_clean)` varaibles.It includes both numeric and categorical variables. Numeric variables such as `marketing_spend`, `visits`, and `purchase_amount` capture customer actitvity and spending behaviour, while the categorical variable `segment` groups customers into different categories.
+The clean dataset contains `r nrow(dat_clean)` observations and `r ncol(dat_clean)` varaibles. It includes both numeric and categorical variables. Numeric variables such as `marketing_spend`, `visits`, and `purchase_amount` capture customer actitvity and spending behaviour, while the categorical variable `segment` groups customers into different categories.
 
 ### Summary Table
 ```{r}
