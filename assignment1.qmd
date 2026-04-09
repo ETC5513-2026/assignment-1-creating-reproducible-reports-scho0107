@@ -48,7 +48,7 @@ The clean dataset contains `r nrow(dat_clean)` observations and `r ncol(dat_clea
 ### Summary Table
 ```{r}
 #| label: tbl-summary
-#| tbl-cap: "Number of customers in each segment"
+#| tbl-cap: "Summary statistics of purchase amount by segment"
 
 dat_clean |>
     group_by(segment) |>
@@ -71,8 +71,10 @@ ggplot(dat_clean, aes(x = purchase_amount)) +
   labs (x = "Purchase Amount", y = "Count")
 ```
 
-@fig-hist shows the distribution of purchase amounts across customers. The value are spend across a wide range, indicating variation in customer spending behaviour.
+@fig-hist shows the distribution of purchase amounts across customers. The values are spread across a wide range, indicating variation in customer spending behaviour.
 
+## Results
+### Scatterplot: Marketing Spend 
 ```{r}
 #| label: fig-scatter
 #| fig-cap: "Relationship between marketing spend and purchase amount"
@@ -80,10 +82,13 @@ ggplot(dat_clean, aes(x = purchase_amount)) +
 ggplot(dat_clean,
        aes(x = marketing_spend,
            y = purchase_amount)) +
-  geom_point()
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) 
 ```
 
+The relationship between marketing spend and purchase amount is shown in @fig-scatter. There appears to be a positive relationship, where higher marketing spend is generally associated with higher purchase amounts. This is supported by the fitted trend line, which suggests an overall upward pattern. However, there is still a fair amount of variation around the trend, indicating that other factors may also influence customer behaviour.
 
+### Boxplot: Purchase by Segment
 ```{r}
 #| label: fig-box
 #| fig-cap: "Purchase amount across customer segments"
@@ -94,3 +99,9 @@ ggplot(dat_clean,
   geom_boxplot()
 ```
 
+The distribution of purchase amounts across customer segments is shown in @fig-box. While all segments show a range of values, the Enterprise segment appears to have a higher median purchase amount compared to the Consumer and SMB segments. This suggests that customer segment, in addition to marketing spend, may also play a role in influencing purchase behaviour.
+
+## Conclusion
+This study examined the relationship between marketing spend and customer purchase amount using campaign data. The results suggest a positive relationship, where higher marketing spend is generally associated with higher customer spending.
+
+However, there is noticeable variation in the data, indicating that purchase outcomes may also be influenced by other factors, such as customer segment. While marketing spend appears to play an important role, it should be considered alongside these additional factors. Overall, the findings suggest that both marketing strategies and customer characteristics are important when analysing customer behaviour.
