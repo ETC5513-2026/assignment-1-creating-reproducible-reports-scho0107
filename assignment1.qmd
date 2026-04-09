@@ -59,7 +59,7 @@ dat_clean |>
     knitr::kable()
 ```
 
-As shown in Table @tbl-summary, the number of customers varies by segment. This provides helpful context for analysing variations in customer groups' purchasing habits.
+As shown in @tbl-summary, the number of customers varies by segment. This provides helpful context for analysing variations in customer groups' purchasing habits, as variations in segment size may influence overall spending patterns.
 
 ### Summary Plot
 ```{r}
@@ -67,11 +67,11 @@ As shown in Table @tbl-summary, the number of customers varies by segment. This 
 #| fig-cap: "Distribution of purchase amounts"
 
 ggplot(dat_clean, aes(x = purchase_amount)) +
-  geom_histogram(bins = 15)+
+  geom_histogram(bins = 30)+
   labs (x = "Purchase Amount", y = "Count")
 ```
 
-Figure @fig-hist shows the distribution of purchase amounts across customers. The value are spend across a wide range, indicating variation in customer spending behaviour.
+@fig-hist shows the distribution of purchase amounts across customers. The value are spend across a wide range, indicating variation in customer spending behaviour.
 
 ```{r}
 #| label: fig-scatter
