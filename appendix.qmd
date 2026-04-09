@@ -1,0 +1,56 @@
+--- 
+title: "Appendix: AI Usage"
+author: "Sum Yee Chong"
+format: 
+    html:
+        toc: true
+        theme: cerulean
+    pdf: 
+        toc: true
+---
+## AI Usage
+
+I used ChatGPT to support my understanding and improve the quality of this assignment. The AI was mainly used to clarify key concepts (such as reproducible reports), assist with debugging R code, and improve the clarity of my written explanations.
+
+For example, I asked questions about data loading issues, handling missing values, and how to correctly use functions such as `filter()`, `count()`, and `group_by()`. I also used ChatGPT to understand how to apply inline R code and structure the report according to the assignment requirements.
+
+In addition, I used ChatGPT to refine the wording of my introduction, dataset description, results, and conclusion sections to ensure clarity and appropriate academic tone. All analysis, interpretation, and final decisions were completed independently by me.
+
+Screenshots of relevant interactions are included in the appendix as evidence of how AI was used in this assignment.
+
+A full record of my AI interaction is available here:
+https://chatgpt.com/share/69d73441-6794-839a-960d-7db6a4caf882
+
+![](screenshots/screenshot1.png)
+![](screenshots/screenshot2.png)
+![](screenshots/screenshot3.png)
+![](screenshots/screenshot4.png)
+![](screenshots/screenshot5.png)
+![](screenshots/screenshot6.png)
+![](screenshots/screenshot7.png)
+![](screenshots/screenshot8.png)
+![](screenshots/screenshot9.png)
+![](screenshots/screenshot10.png)
+![](screenshots/screenshot11.png)
+![](screenshots/screenshot12.png)
+![](screenshots/screenshot13.png)
+![](screenshots/screenshot14.png)
+![](screenshots/screenshot15.png)
+![](screenshots/screenshot16.png)
+![](screenshots/screenshot17.png)
+![](screenshots/screenshot18.png)
+![](screenshots/screenshot19.png)
+![](screenshots/screenshot20.png)
+![](screenshots/screenshot21.png)
+![](screenshots/screenshot22.png)
+![](screenshots/screenshot23.png)
+![](screenshots/screenshot24.png)
+![](screenshots/screenshot25.png)
+![](screenshots/screenshot26.png)
+![](screenshots/screenshot27.png)
+![](screenshots/screenshot28.png)
+![](screenshots/screenshot29.png)
+![](screenshots/screenshot30.png)
+![](screenshots/screenshot31.png)
+![](screenshots/screenshot32.png)
+![](screenshots/screenshot33.png)
